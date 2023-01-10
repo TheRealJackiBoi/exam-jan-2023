@@ -29,11 +29,11 @@ public class Main {
         ArrayList<Lion> lions = findLions(animals);
         ArrayList<Parrot> parrots = findParrots(animals);
 
-        /*
+
         printArrayFormatted("Mammals", mammals);
-        printArrayFormatted("Mammals", lions);
-        printArrayFormatted("Mammals", parrots);
-        */
+        printArrayFormatted("Lions", lions);
+        printArrayFormatted("Parrots", parrots);
+
     }
 
     public static ArrayList<Animal> findMammals(ArrayList<Animal> animals) {
@@ -75,10 +75,10 @@ public class Main {
         return parrots;
     }
 
-    public static void printArrayFormatted(String title, ArrayList<Animal> animals) {
+    public static <T extends Animal> void printArrayFormatted(String title, ArrayList<T> animals) {
         System.out.println("---------------------");
         System.out.println(title +": ");
-        for (Animal a :
+        for (T a :
                 animals) {
             System.out.println(a);
         }
